@@ -304,7 +304,7 @@ section {
   justify-content: flex-start;
 }
 .message.them .space {
-  width: 25px;
+  width: 30px;
   height: 10px;
   display: inline-block;
 }
