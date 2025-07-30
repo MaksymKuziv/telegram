@@ -1,0 +1,485 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v48/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbWmT.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v19/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf) format('truetype');
+}
+:root {
+  --chat-out-cont-surf: #e1fec6;
+  --txt-primary: #000;
+  --txt-secondary: #8d8d8f;
+  --chat-in-cont-surf: #fff;
+  --txt-brand: #3eaa3c;
+  --chat-in-cont-txt: var(--txt-primary);
+  --chat-out-cont-txt: var(--txt-primary);
+  --chat-out-label-txt: var(--txt-brand);
+  --chat-in-label-txt: var(--txt-secondary);
+  --button-surf: rgba(36, 36, 36, 0.34);
+  --button-txt: #fff;
+  --interface-ios-surf: #000;
+  --interface-input-surf: #fff;
+  --interface-surf: #f6f6f6;
+  --interface-input-txt: rgba(141, 141, 143, 0.4);
+  --interface-input-icon: var(--txt-secondary);
+  --interface-isdarkmode-mask: rgba(255, 255, 255, 0);
+  --txt-highlight: #4ba3e2;
+  --icon-in-bg: var(--txt-highlight);
+  --icon-out-bg: #5fbe67;
+  --icon-in-txt: #fff;
+  --icon-out-txt: #effdde;
+  --icon-action-bg: #0a6bd4;
+  --font-family: "Roboto", sans-serif;
+  --second-family: "SF Pro Display", sans-serif;
+  --third-family: "Inter", sans-serif;
+  --font3: "SF Pro Text", sans-serif;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+a {
+  transition: 0.3s;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+ul {
+  list-style-type: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+body,
+input,
+textarea,
+button {
+  font-family: 'Montserrat', sans-serif;
+}
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #efebe0;
+  padding: 15px 0;
+}
+.telegram-wrap {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.telegram-box {
+  width: 375px;
+  background: var(--interface-surf);
+}
+.telegram-top {
+  padding: 13px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.time-сhat {
+  width: 64px;
+  text-align: center;
+  font-family: var(--second-family);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0.03em;
+  color: var(--txt-primary);
+}
+.top-info path {
+  fill: var(--txt-primary);
+}
+.top-info {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.battery {
+  width: 27px;
+  height: 13px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  position: relative;
+}
+.battery-text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 1;
+  text-align: center;
+  color: var(--chat-in-cont-surf);
+  z-index: 10;
+  position: relative;
+}
+.battery-bacground {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #37c058;
+  border-radius: 4px;
+}
+.battery-right-icon {
+  width: 2.4px;
+  height: 5px;
+  position: absolute;
+  top: 3.5px;
+  right: -3.5px;
+  background: #37c058;
+  border-radius: 0 55px 55px 0;
+}
+.battery.low .battery-bacground {
+  background-color: #fa3532;
+  border-radius: 20px;
+  margin-left: 0.3px;
+}
+.battery.medium .battery-bacground {
+  background-color: #fdc633;
+  border-radius: 4px 0 0 4px;
+}
+.battery .battery-bacground {
+  background-color: #8fd16a;
+}
+.battery.warning .battery-right-icon {
+  background: rgba(0, 0, 0, 0.4);
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px 5px;
+}
+.user-photo {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+}
+.user-left {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.message-number {
+  width: 24px;
+  height: 18px;
+  background: #398af5;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 12px;
+  padding-bottom: 1px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--chat-in-cont-surf);
+}
+.user-content {
+  text-align: center;
+}
+.user-name {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 106%;
+  letter-spacing: 0.04em;
+  color: var(--txt-primary);
+  margin-bottom: 2px;
+}
+.user-time {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: var(--txt-secondary);
+}
+.chat-box {
+  height: 630px;
+  background-image: url(../img/chat-bg.jpg);
+  background-size: cover;
+  background-position: center center;
+  overflow-y: auto;
+}
+.chat-box::-webkit-scrollbar-track {
+  background-color: rgba(239, 235, 224, 0.1);
+}
+.chat-box::-webkit-scrollbar {
+  width: 3px;
+  background-color: rgba(239, 235, 224, 0.1);
+}
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: #a7a7a7;
+  border-radius: 3px;
+}
+.telegram-bottom {
+  padding: 7px 8px 9px;
+}
+.bottom-line {
+  border-radius: 100px;
+  width: 134px;
+  height: 5px;
+  background: var(--interface-ios-surf);
+  margin: 28px auto 0 auto;
+}
+.telegram-bottom-block {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+.bottom-icon {
+  width: 30px;
+}
+.telegram-bottom-content {
+  width: calc(100% - 78px);
+  height: 33px;
+  background: var(--interface-input-surf);
+  border: 1px solid var(--interface-input-txt);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px 2px 13px;
+}
+.telegram-bottom-content p {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 17px;
+  color: var(--interface-input-txt);
+}
+.telegram-bottom-content img {
+  width: 19px;
+  height: 19px;
+}
+.chat-window {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 5px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.message {
+  display: flex;
+  width: 100%;
+}
+.message.me {
+  justify-content: flex-end;
+}
+.message.me .space {
+  width: 45px;
+  height: 10px;
+  display: inline-block;
+}
+.message.them {
+  justify-content: flex-start;
+}
+.message.them .space {
+  width: 25px;
+  height: 10px;
+  display: inline-block;
+}
+.bubble {
+  position: relative;
+  background: #dcf8c6;
+  color: #000;
+  padding: 7px 10px 6px;
+  border-radius: 15px;
+  max-width: 80%;
+  font-size: 17px;
+  line-height: 1.25;
+  font-family: var(--second-family);
+}
+.message.them .bubble {
+  background: #fff;
+}
+.time {
+  position: absolute;
+  right: 8px;
+  bottom: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: var(--second-family);
+  color: #888;
+}
+.block-message .message {
+  position: relative;
+}
+.block-message .message:not(:last-child) {
+  margin-bottom: 2px;
+}
+.block-message .me:last-child:before {
+  content: '';
+  width: 15px;
+  height: 20px;
+  background-image: url(../img/_tail-atom-out.svg);
+  position: absolute;
+  bottom: 0;
+  right: -7px;
+}
+.block-message .me .time {
+  color: var(--chat-out-label-txt);
+  padding-right: 18px;
+  background-image: url(../img/double-check.svg);
+  background-repeat: no-repeat;
+  background-position: right 1px;
+}
+.block-message .them:last-child:before {
+  content: '';
+  width: 14px;
+  height: 20px;
+  background-image: url(../img/_tail-atom-in.svg);
+  position: absolute;
+  bottom: 0;
+  left: -7px;
+}
+.dark {
+  --txt-primary: #fff;
+  --chat-in-cont-surf: #000;
+  background: #1C1C1D;
+}
+.dark .chat-box {
+  background-image: url(../img/dark/chat-bg.jpg);
+}
+.dark .battery {
+  background: rgba(255, 255, 255, 0.4);
+}
+.dark .battery .battery-bacground {
+  background: #ffffff;
+}
+.dark .battery.warning .battery-right-icon {
+  background: rgba(255, 255, 255, 0.4);
+}
+.dark .battery-right-icon {
+  background: #ffffff;
+}
+.dark .message.them .bubble {
+  background: #262628;
+}
+.dark .bubble {
+  color: var(--txt-primary);
+  background: linear-gradient(90deg, #9a42ff 0%, #585eff 100%);
+}
+.dark .time,
+.dark .block-message .me .time {
+  color: rgba(255, 255, 255, 0.5);
+}
+.dark .block-message .me .time {
+  background-image: url(../img/dark/double-check.svg);
+}
+.dark .block-message .them:last-child:before {
+  background-image: url(../img/dark/_tail-atom-in.svg);
+}
+.dark .block-message .me:last-child:before {
+  background-image: url(../img/dark/_tail-atom-out.svg);
+}
+.dark .telegram-bottom-content {
+  background: #050505;
+  border: none;
+}
+.dark .bottom-line {
+  background: #ffffff;
+}
+.label-block {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.setting-label {
+  min-width: 115px;
+  font-weight: 500;
+  margin-right: 10px;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+.setting-select {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-family: sans-serif;
+  background: #f9f9f9;
+  outline: none;
+  cursor: pointer;
+}
+.setting-range {
+  width: 200px;
+  vertical-align: middle;
+}
+.chat-controls {
+  margin-bottom: 20px;
+  font-family: sans-serif;
+}
+.message-input {
+  margin-bottom: 16px;
+}
+.text-message {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+.message-input textarea {
+  width: 400px;
+  height: 80px;
+  resize: vertical;
+  padding: 10px;
+  font-size: 14px;
+  resize: none;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #ccc;
+  margin-bottom: 6px;
+  display: block;
+  margin-top: 5px;
+}
+.message-input input[type="text"] {
+  padding: 6px 10px;
+  width: 65px;
+  margin-right: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.message-input button {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #0088cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.message-input button:hover {
+  background-color: #006ea8;
+}
+
