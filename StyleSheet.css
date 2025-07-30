@@ -225,7 +225,7 @@ section {
 }
 .chat-box {
   height: 630px;
-  background-image: url(../img/chat-bg.jpg);
+  background-image: url(https://raw.githubusercontent.com/MaksymKuziv/telegram/master/img/chat-bg.jpg);
   background-size: cover;
   background-position: center center;
   overflow-y: auto;
@@ -357,7 +357,7 @@ section {
   content: '';
   width: 14px;
   height: 20px;
-  background-image: url(../img/_tail-atom-in.svg);
+  background-image: url(https://raw.githubusercontent.com/MaksymKuziv/telegram/master/img/_tail-atom-in.svg);
   position: absolute;
   bottom: 0;
   left: -7px;
@@ -368,7 +368,7 @@ section {
   background: #1C1C1D;
 }
 .dark .chat-box {
-  background-image: url(../img/dark/chat-bg.jpg);
+  background-image: url(https://raw.githubusercontent.com/MaksymKuziv/telegram/master/img/dark/chat-bg.jpg);
 }
 .dark .battery {
   background: rgba(255, 255, 255, 0.4);
@@ -394,13 +394,13 @@ section {
   color: rgba(255, 255, 255, 0.5);
 }
 .dark .block-message .me .time {
-  background-image: url(../img/dark/double-check.svg);
+  background-image: url(https://raw.githubusercontent.com/MaksymKuziv/telegram/master/img/dark/double-check.svg);
 }
 .dark .block-message .them:last-child:before {
-  background-image: url(../img/dark/_tail-atom-in.svg);
+  background-image: url(https://raw.githubusercontent.com/MaksymKuziv/telegram/master/img/dark/_tail-atom-in.svg);
 }
 .dark .block-message .me:last-child:before {
-  background-image: url(../img/dark/_tail-atom-out.svg);
+  background-image: url(https://raw.githubusercontent.com/MaksymKuziv/telegram/master/img/dark/_tail-atom-out.svg);
 }
 .dark .telegram-bottom-content {
   background: #050505;
