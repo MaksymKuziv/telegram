@@ -341,7 +341,7 @@ section {
   content: '';
   width: 15px;
   height: 20px;
-  background-image: url(../img/_tail-atom-out.svg);
+  background-image: url(https://raw.githubusercontent.com/MaksymKuziv/telegram/master/img/_tail-atom-out.svg);
   position: absolute;
   bottom: 0;
   right: -7px;
