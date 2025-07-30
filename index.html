@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/fonts/fonts.css" rel="stylesheet" />
+    <link href="css/StyleSheet.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="img/favicon.png">
+</head>
+<body>
+
+
+    <section>
+
+        <div class="telegram-wrap">
+            <div class="telegram-box">
+                <div class="telegram-top">
+                    <p class="time-сhat">10:00</p>
+                    <div class="top-info">
+                        <img class="signal-icon" src="img/Signal-icon-1.svg" alt="Alternate Text" />
+                        <img class="wifi-icon" src="img/Wifi-icon-1.svg" alt="Alternate Text" />
+                        <div class="battery">
+                            <div class="battery-text">100</div>
+                            <div class="battery-bacground"></div>
+                            <span class="battery-right-icon"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-info">
+                    <div class="user-left">
+                        <img src="img/arrow-blue.svg" alt="Alternate Text" />
+                        <span class="message-number">2</span>
+                    </div>
+                    <div class="user-content">
+                        <p class="user-name">Liza</p>
+                        <p class="user-time">last seen 22 min ago</p>
+                    </div>
+                    <img src="img/user-photo-1.png" class="user-photo" alt="Alternate Text" />
+                </div>
+
+                <div class="chat-box">
+
+                    <div class="chat-window"></div>
+                </div>
+
+                <div class="telegram-bottom">
+                    <div class="telegram-bottom-block">
+                        <img class="bottom-icon" src="img/Attach-Icon.svg" alt="Alternate Text" />
+                        <div class="telegram-bottom-content">
+                            <p>Сообщение</p>
+                            <img src="img/time-icon.svg" alt="Alternate Text" />
+                        </div>
+                        <img class="bottom-icon" src="img/Micro-icon.svg" alt="Alternate Text" />
+                    </div>
+                    <div class="bottom-line"></div>
+                </div>
+            </div>
+
+            <div class="label-wrap">
+
+                <div class="label-block">
+                    <label for="theme-select" class="setting-label">Выбор темы:</label>
+                    <select id="theme-select" class="setting-select">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+                <div class="label-block">
+                    <label for="signal-select" class="setting-label">Уровень сигнала:</label>
+                    <select id="signal-select" class="setting-select">
+                        <option value="1">Full</option>
+                        <option value="2">3 lines</option>
+                        <option value="3">2 lines</option>
+                        <option value="4">1 lines</option>
+                    </select>
+                </div>
+                <div class="label-block">
+                    <label for="wifi-select" class="setting-label">Уровень Wi-Fi:</label>
+                    <select id="wifi-select" class="setting-select">
+                        <option value="1">3 lines</option>
+                        <option value="2">2 lines</option>
+                        <option value="3">1 lines</option>
+                        <option value="4">LTE</option>
+                        <option value="5">5G</option>
+                        <option value="6">4G</option>
+                        <option value="7">3G</option>
+                    </select>
+                </div>
+                <div class="label-block">
+                    <label for="user-photo-select" class="setting-label">Выбрать фото:</label>
+                    <select id="user-photo-select" class="setting-select">
+                        <option value="1">User photo 1</option>
+                        <option value="2">User photo 2</option>
+                        <option value="3">User photo 3</option>
+                        <option value="4">User photo 4</option>
+                        <option value="5">User photo 5</option>
+                        <option value="6">User photo 6</option>
+                        <option value="7">User photo 7</option>
+                        <option value="8">User photo 8</option>
+                        <option value="9">User photo 9</option>
+                        <option value="10">User photo 10</option>
+                        <option value="11">User photo 11</option>
+                        <option value="12">User photo 12</option>
+                    </select>
+                </div>
+                <div class="label-block">
+                    <label for="battery-range" class="setting-label">Уровень батареи:</label>
+                    <input type="range" id="battery-range" class="setting-range" min="10" max="100" value="100">
+                </div>
+                <div class="chat-controls">
+                    <div class="message-input">
+                        <label>Моё сообщение:</label><br>
+                        <textarea id="my-message" placeholder="Введите сообщение"></textarea>
+                        <input type="text" id="my-time" maxlength="5" value="10:15" placeholder="Время">
+                        <button id="send-my-message">Отправить</button>
+                    </div>
+
+                    <div class="message-input">
+                        <label>Сообщение собеседника:</label><br>
+                        <textarea id="their-message" placeholder="Введите сообщение"></textarea>
+                        <input type="text" id="their-time" maxlength="5" value="10:22" placeholder="Время">
+                        <button id="send-their-message">Отправить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/jquery/jquery.min.js"></script>
+    <script src="js/JavaScript.js"></script>
+
+</body>
+</html>
