@@ -186,5 +186,7 @@
         $('.user-time').text($(this).val());
     });
 
+    console.log("test")
+
 });
 
