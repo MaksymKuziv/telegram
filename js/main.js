@@ -165,12 +165,12 @@
     });
 
 
-    $('.time-input-item').val($('.time-сhat').text());
+    $('.time-user').val($('.time-сhat').text());
     $('.input-name').val($('.user-name').text());
     $('.input-count-message').val($('.message-number').text());
     $('.input-last-visiting').val($('.user-time').text());
 
-    $('.time-input-item').on('input', function () {
+    $('.time-user').on('input', function () {
         $('.time-сhat').text($(this).val());
     });
 
