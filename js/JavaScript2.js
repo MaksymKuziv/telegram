@@ -12,16 +12,16 @@
             $battery.addClass('warning');
         }
 
-        $battery.find('.battery-text').text(level);
-        $battery.find('.battery-bacground').css('width', level + '%');
+        $battery.find('.battery-percent').text(level);
+        $battery.find('.battery-background-box').css('width', level + '%');
     }
 
     $('.battery').each(function () {
-        const level = parseInt($(this).find('.battery-text').text());
+        const level = parseInt($(this).find('.battery-percent').text());
         updateBatteryUI($(this), level);
     });
 
-    $('#battery-range').on('input', function () {
+    $('#battery-slider').on('input', function () {
         const level = parseInt($(this).val());
 
         $('.battery').each(function () {
@@ -29,9 +29,9 @@
         });
     });
 
-    $('#theme-select').on('change', function () {
+    $('#select-theme').on('change', function () {
         const selectedTheme = $(this).val();
-        const $telegramBox = $('.telegram-box');
+        const $telegramBox = $('.telegram-block');
         const $icons = $('.signal-icon, .wifi-icon');
 
         if (selectedTheme === 'dark') {
@@ -57,7 +57,7 @@
     });
 
 
-    $('#signal-select').on('change', function () {
+    $('#signal-choose-select').on('change', function () {
         const signalLevel = $(this).val();
 
         $('.signal-icon').each(function () {
@@ -69,7 +69,7 @@
         });
     });
 
-    $('#wifi-select').on('change', function () {
+    $('#wi-fi_select').on('change', function () {
         const wifiLevel = $(this).val();
 
         $('.wifi-icon').each(function () {
@@ -80,7 +80,7 @@
         });
     });
 
-    $('#user-photo-select').on('change', function () {
+    $('#change-user-photo').on('change', function () {
         const userPhotoNumber = $(this).val();
 
         $('.user-photo').each(function () {
@@ -103,16 +103,16 @@
       </div>
     `;
 
-        const $lastBlock = $('.chat-window .block-message').last();
+        const $lastBlock = $('.chat-window .message-block').last();
 
         if ($lastBlock.length && $lastBlock.find(`.message.${type}`).length > 0 && $lastBlock.find('.message').last().hasClass(type)) {
             $lastBlock.append(messageHTML);
         } else {
-            $('.chat-window').append(`<div class="block-message">${messageHTML}</div>`);
+            $('.chat-window').append(`<div class="message-block">${messageHTML}</div>`);
         }
     }
 
-    $('#send-my-message').on('click', function () {
+    $('#send_my-message').on('click', function () {
         const text = $('#my-message').val().trim();
         const time = $('#my-time').val().trim();
 
@@ -123,7 +123,7 @@
         }
     });
 
-    $('#send-their-message').on('click', function () {
+    $('#send_their-message').on('click', function () {
         const text = $('#their-message').val().trim();
         const time = $('#their-time').val().trim();
 
@@ -134,5 +134,58 @@
         }
     });
 
-});
 
+    $('#battery-select').on('change', function () {
+        const $battery = $('.battery');
+        $battery.removeClass('show-text charger battery-border battery-green');
+
+        const selected = $(this).val();
+
+        if (selected === 'text') {
+            $battery.addClass('show-text');
+        } else if (selected === 'charger') {
+            $battery.addClass('charger');
+        } else if (selected === 'both') {
+            $battery.addClass('show-text charger');
+        } else if (selected === 'standart') {
+            $battery.addClass('battery-border');
+        } else if (selected === 'green') {
+            $battery.addClass('battery-green');
+        }
+    });
+
+
+    $(document).on('input', '.time-input-item', function () {
+        let val = $(this).val().replace(/[^0-9]/g, '');
+
+        if (val.length >= 3) {
+            val = val.substring(0, 4);
+            val = val.slice(0, 2) + ':' + val.slice(2);
+        }
+
+        $(this).val(val);
+    });
+
+
+    $('.time-user').val($('.time-сhat').text());
+    $('.input-name').val($('.user-name').text());
+    $('.input-count-message').val($('.message-number').text());
+    $('.input-last-visiting').val($('.user-time').text());
+
+    $('.time-user').on('input', function () {
+        $('.time-сhat').text($(this).val());
+    });
+
+    $('.input-name').on('input', function () {
+        $('.user-name').text($(this).val());
+    });
+
+    $('.input-count-message').on('input', function () {
+        $('.message-number').text($(this).val());
+    });
+
+    $('.input-last-visiting').on('input', function () {
+        $('.user-time').text($(this).val());
+    });
+
+});
